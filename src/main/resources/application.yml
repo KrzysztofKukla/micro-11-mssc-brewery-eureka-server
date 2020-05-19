@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+
+#Eureka itself is designed to run as cluster, but hre for localhost we dont want that to happen
+eureka:
+  client:
+    register-with-eureka: false
+#    for local we are not fetching registry from other Eureka server
+    fetch-registry: false
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
