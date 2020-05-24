@@ -1,12 +1,16 @@
+#distributed tracing server
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411
+
 server:
   port: 8761
 
-
-#Eureka itself is designed to run as cluster, but hre for localhost we dont want that to happen
 eureka:
   client:
+    #Eureka itself is designed to run as cluster, but hre for localhost we dont want that to happen
     register-with-eureka: false
-#    for local we are not fetching registry from other Eureka server
+    #    for local we are not fetching registry from other Eureka server
     fetch-registry: false
 
 logging:
